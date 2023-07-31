@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends 'odds/base.html' %}
+{% load static %}
+
+{% block title_block %}
+{% endblock %}
+
+{% block body_block %}
+    <div class="app-container">
+        <div>
+            <h1>Betting ODDS</h1>
+        </div>
+        <table>
+            <tr>
+                <th>Game_ID</th>
+                <th>Status</th>
+                <th>Data and Time</th>
+                <th>Home Team</th>
+                <th>Away Team</th>
+                <th>Home Team Money Line</th>
+                <th>Away Team Money Line</th>
+            </tr>
+        {% for data in Final_data %}
+            <tr>
+                <td>{{ data.Game_ID }}</td>
+                <td>{{ data.Status }}</td>
+                <td>{{ data.Date_and_Time }}</td>
+                <td>{{ data.Home_Team }}</td>
+                <td>{{ data.Away_Team }}</td>
+                <td>{{ data.Home_Team_Money_Line }}</td>
+                <td>{{ data.Away_Team_Money_Line }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+   </div>     
+{% endblock %}
