@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% extends 'odds/base.html' %}
+{% load static %}
+
+{% block title_block %}
+{% endblock %}
+
+{% block body_block %}
+    <div class="app-container">
+        <div>
+            <h1>BetApp</h1>
+        </div>
+        <table>
+            <tr>
+                <th>Game_ID</th>
+                <th>Status</th>
+                <th>Data and Time</th>
+                <th>Home Team</th>
+                <th>Away Team</th>
+                <th>Home Team Money Line</th>
+                <th>Away Team Money Line</th>
+            </tr>
+        {% for data in Final_data %}
+            <tr>
+                <td>{{ data.Game_ID }}</td>
+                <td>{{ data.Status }}</td>
+                <td>{{ data.Date_and_Time }}</td>
+                <td>{{ data.Home_Team }}</td>
+                <td>{{ data.Away_Team }}</td>
+                <td>{{ data.Home_Team_Money_Line }}</td>
+                <td>{{ data.Away_Team_Money_Line }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+
+   </div>     
+{% for data in Final_data %}
+    {% if forloop.counter0|divisibleby:2 %}
+        <div class="flex-container">
+    {% endif %}
+    
+    <div class="flex-child">
+        {{ data.Game_ID }}
+        {{ data.Status }}
+        {{ data.Date_and_Time }}
+        {{ data.Home_Team }}
+        {{ data.Away_Team }}
+        {{ data.Home_Team_Money_Line }}
+        {{ data.Away_Team_Money_Line }}
+    </div>
+
+    {% if not forloop.counter0|divisibleby:2 and not forloop.last %}
+        </div>
+    {% endif %}
+
+{% endfor %}
+{% endblock %}

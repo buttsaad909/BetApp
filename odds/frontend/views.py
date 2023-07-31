@@ -20,39 +20,7 @@ def index(request):
 
     # Define an empty list to store the specific data for each game
     Final_data = []
-    abbreviations_team = {
-        "ARI": "Arizona Diamondbacks",
-        "ATL": "Atlanta Braves",
-        "BAL": "Baltimore Orioles",
-        "BOS": "Boston Red Sox",
-        "CHC": "Chicago Cubs",
-        "CHW": "Chicago White Sox",
-        "CIN": "Cincinnati Reds",
-        "CLE": "Cleveland Indians",
-        "COL": "Colorado Rockies",
-        "DET": "Detroit Tigers",
-        "FLA": "Florida Marlins",
-        "HOU": "Houston Astros",
-        "KAN": "Kansas City Royals",
-        "LAA": "Los Angeles Angels of Anaheim",
-        "LAD": "Los Angeles Dodgers",
-        "MIL": "Milwaukee Brewers",
-        "MIA": "Miami Marlins",
-        "MIN": "Minnesota Twins",
-        "NYM": "New York Mets",
-        "NYY": "New York Yankees",
-        "OAK": "Oakland Athletics",
-        "PHI": "Philadelphia Phillies",
-        "PIT": "Pittsburgh Pirates",
-        "SD": "San Diego Padres",
-        "SF": "San Francisco Giants",
-        "SEA": "Seattle Mariners",
-        "STL": "St. Louis Cardinals",
-        "TB": "Tampa Bay Rays",
-        "TEX": "Texas Rangers",
-        "TOR": "Toronto Blue Jays",
-        "WSH": "Washington Nationals"
-    }
+
     if games_data:
         for game in games_data:
             game_id = game["GameID"]
@@ -112,3 +80,37 @@ def get_games_by_date(api_key, date_str):
     else:
         print(f"Failed to fetch data. Status code: {response.status_code}")
         return None
+    
+abbreviations_team = {
+    "ARI": "Arizona Diamondbacks",
+    "ATL": "Atlanta Braves",
+    "BAL": "Baltimore Orioles",
+    "BOS": "Boston Red Sox",
+    "CHC": "Chicago Cubs",
+    "CHW": "Chicago White Sox",
+    "CIN": "Cincinnati Reds",
+    "CLE": "Cleveland Indians",
+    "COL": "Colorado Rockies",
+    "DET": "Detroit Tigers",
+    "FLA": "Florida Marlins",
+    "HOU": "Houston Astros",
+    "KAN": "Kansas City Royals",
+    "LAA": "Los Angeles Angels of Anaheim",
+    "LAD": "Los Angeles Dodgers",
+    "MIL": "Milwaukee Brewers",
+    "MIA": "Miami Marlins",
+    "MIN": "Minnesota Twins",
+    "NYM": "New York Mets",
+    "NYY": "New York Yankees",
+    "OAK": "Oakland Athletics",
+    "PHI": "Philadelphia Phillies",
+    "PIT": "Pittsburgh Pirates",
+    "SD": "San Diego Padres",
+    "SF": "San Francisco Giants",
+    "SEA": "Seattle Mariners",
+    "STL": "St. Louis Cardinals",
+    "TB": "Tampa Bay Rays",
+    "TEX": "Texas Rangers",
+    "TOR": "Toronto Blue Jays",
+    "WSH": "Washington Nationals"
+}
